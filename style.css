@@ -1,42 +1,49 @@
 html {
   font-size: 10px;
+  height: 100%;
+  width: 100%;
   background: url("images/background.jpg") bottom center;
   background-size: cover;
 }
-
 body,
 html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.keys {
+.container1,
+.container2,
+.container3 {
   display: flex;
   flex: 1;
-  min-height: 100vh;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
-.key {
+.box {
+  flex: 1;
   border: 0.4rem solid black;
   border-radius: 0.5rem;
   margin: 1rem;
   font-size: 1.5rem;
   padding: 1rem 0.5rem;
   transition: all 0.09s ease;
-  width: 10rem;
+  width: 50px;
   text-align: center;
   color: white;
   background: rgba(0, 0, 0, 0.4);
   text-shadow: 0 0 0.5rem black;
-}
-
-.playing {
-  transform: scale(1.1);
-  border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
 }
 
 kbd {
@@ -49,4 +56,27 @@ kbd {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   color: #ffc600;
+}
+
+@media (max-width: 1000px) {
+  .container1,
+  .container2,
+  .container3 {
+    flex-direction: column;
+  }
+  .box {
+    width: 200px;
+  }
+}
+
+@media (max-width: 765px) {
+  .box {
+    width: 100px;
+  }
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
 }
